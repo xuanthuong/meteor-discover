@@ -1,5 +1,5 @@
-#Những lưu ý trong quá trình học
-- Chương 7: Người dùng không đăng nhập thì không được submit bài, trước đó submit được là nhờ gói package `insecure`. Sau khi remove thì người dùng chưa đăng nhập sẽ không submit được bài (`meteor remove insecure`). Chú ý là lúc này người dùng cũng không submit bài post từ client console được.
+## Những lưu ý trong quá trình học
+1. Chương 7: Người dùng không đăng nhập thì không được submit bài, trước đó submit được là nhờ gói package `insecure`. Sau khi remove thì người dùng chưa đăng nhập sẽ không submit được bài (`meteor remove insecure`). Chú ý là lúc này người dùng cũng không submit bài post từ client console được.
 Sau đó ta dùng phương thức `allow` (`Posts.allow`) để thông báo cho phép user đã log in được phép post bài.
 
 Nhưng vẫn có 1 số vấn đề là:
@@ -17,3 +17,9 @@ Cuối cùng là kiểm tra `tính bảo mật` của `object sẽ insert` thôn
 Bonus: Kiểm tra url đã tồn tại hay chưa? sort bài viết
 
 - ```Mục 7.5: Trong mô hình web hiện tại thì thời gian trễ cần phải nhỏ nhất để người dùng có cảm nhận đáp ứng tức thời. Kỹ thuật được sử dụng là khi người dùng nhấn nút submit thì trình duyệt gọi method insert hay gì đó, đồng thời client phải mô phỏng lại dữ liệu đó (giả sử đã insert thành công), sau đó mất thời gian 200 - 500ms thì server trả kết quả thật sự về (thường thì giống nhau) để client cập nhật lại```
+
+2. Chương 8
+Khi `update` thì có sử dụng toán tử `$set` để update những trường thay đổi còn những trường khác vẫn giữ nguyên
+Trong file `.js` thì thường là `Template helpers` hoặc `Template events`
+Hạn chế biên tập, chỉ cho user đó update 1 số trường nào đó thôi để tránh trường hợp user này post bài nhưng gán tên user khác, dùng `underscore` `_.without`
+Bài tập: check khi user update url hay title trùng với những cái đã tồn tại (chỉ có trong phần tạo mới)
