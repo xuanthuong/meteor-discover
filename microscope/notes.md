@@ -23,3 +23,9 @@ Khi `update` thì có sử dụng toán tử `$set` để update những trườ
 Trong file `.js` thì thường là `Template helpers` hoặc `Template events`
 Hạn chế biên tập, chỉ cho user đó update 1 số trường nào đó thôi để tránh trường hợp user này post bài nhưng gán tên user khác, dùng `underscore` `_.without`
 Bài tập: check khi user update url hay title trùng với những cái đã tồn tại (chỉ có trong phần tạo mới)
+
+3. Chương 9 Hiển thị thông báo lỗi
+Có 2 loại lỗi:
+  - Lỗi cấp độ ứng dụng (do người dùng, phía client)
+  - Lỗi cấp độ code
+Khởi tạo object chứa lỗi mỗi khi template postSubmit được tạo để đảm bảo lỗi cũ của lần trước sẽ không hiển thị lại
